@@ -1,15 +1,14 @@
-def image = null
+
 pipeline{
     agent any
     stages{
         stage('user input'){
             steps{
                 script{
-                    image = input(
-                        messgae: 'enter the image name',
-                        ok: 'Submit',
-                        parameters: [string(defaultValue: 'nginx', name: 'image name')]
-                    )
+                    env.IMAGE = input message: 'Please enter the username',
+                             parameters: [string(defaultValue: 'nginx',
+                                          description: '',
+                                          name: 'Username')]
                 }
             }
         }
@@ -17,7 +16,7 @@ pipeline{
         stage('launch container'){
             steps{
                 sh '''
-                echo $image
+                echo ${env.IMAGE}
                 IMAGE=${image} docker-compose up -d
                 '''
             }
