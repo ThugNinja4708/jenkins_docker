@@ -4,11 +4,7 @@ pipeline{
         stage("verify tooling"){
             steps{
                 sh '''
-                docker version
-                docker info
-                dcoker compose version
-                curl --version  
-                '''
+                IMAGE=$(params.IMAGE) docker-compose up -d
             }
         }
     }
