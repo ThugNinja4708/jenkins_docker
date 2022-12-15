@@ -17,6 +17,7 @@ pipeline{
         stage('launch container'){
             steps{
                 sh '''
+                echo $image
                 IMAGE=${image} docker-compose up -d
                 '''
             }
