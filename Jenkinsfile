@@ -5,7 +5,9 @@ pipeline{
             steps{
                 sh '''
                 docker version
+                docker info
                 dcoker compose version
+                curl --version  
                 '''
             }
         }
