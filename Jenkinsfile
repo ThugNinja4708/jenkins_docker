@@ -4,7 +4,7 @@ pipeline{
         stage("verify tooling"){
             steps{
                 sh '''
-                IMAGE=$(params.IMAGE) docker-compose up -d
+                IMAGE=$(params.image) docker-compose up -d
                 '''
             }
         }
