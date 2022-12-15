@@ -19,14 +19,4 @@ pipeline{
                 }
             }
         }
-
-        stage('launch container'){
-            steps{
-                sh '''
-                echo "image name: ${env.IMAGE}"
-                IMAGE=${env.IMAGE} docker-compose up -d
-                '''
-            }
-        }
     }
-}
