@@ -5,6 +5,7 @@ pipeline{
             steps{
                 sh '''
                 IMAGE=$(params.IMAGE) docker-compose up -d
+                '''
             }
         }
     }
