@@ -9,9 +9,9 @@ pipeline{
                              parameters: [string(defaultValue: '',
                                           description: '',
                                           name: 'Username')]
-        }
                 echo "${env.IMG}"
                 IMAGE=${env.IMG} docker-compose up -d
+                }
                 }
             }
         }
