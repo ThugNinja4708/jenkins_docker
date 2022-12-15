@@ -10,6 +10,7 @@ pipeline{
                                           description: '',
                                           name: 'Username')]
         }
+                echo "${env.IMG}"
                 IMAGE=${env.IMG} docker-compose up -d
                 }
             }
