@@ -9,13 +9,8 @@ pipeline{
                              parameters: [string(defaultValue: '',
                                           description: '',
                                           name: 'Username')]
-          env.PASSWORD = input message: 'Please enter the password',
-                             parameters: [password(defaultValue: '',
-                                          description: '',
-                                          name: 'Password')]
         }
-        echo "Username: ${env.USERNAME}"
-        echo "Password: ${env.PASSWORD}"
+                IMAGE=${env.USERNAME} docker-compose up -d
                 }
             }
         }
