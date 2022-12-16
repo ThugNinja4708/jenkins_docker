@@ -19,7 +19,7 @@ pipeline{
             steps{
                 sh """
                     pwd
-                    IMAGE=${env.IMG} docker-compose up -d
+                    sudo IMAGE=${env.IMG} docker-compose up -d
                 """
             
                 }
