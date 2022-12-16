@@ -18,7 +18,7 @@ pipeline{
         stage("build docker compose "){
             steps{
                 sh """
-                    sudo IMAGE=${env.IMG} docker-compose up -d
+                    IMAGE=${env.IMG} docker-compose up -d
                 """
             
                 }
