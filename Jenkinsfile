@@ -18,6 +18,7 @@ pipeline{
         stage("build docker compose "){
             steps{
                 sh """
+                    pwd
                     IMAGE=${env.IMG} docker-compose up -d
                 """
             
